@@ -1,0 +1,89 @@
+mysql> create table libreta(
+    -> nombre varchar (20) not null,
+    -> domicilio varchar(30) not null,
+    -> telefono varchar(11) not null,
+    -> primary key (nombre));
+Query OK, 0 rows affected (0.03 sec)
+mysql> show tables;
++---------------------+
+| Tables_in_bdlibreta |
++---------------------+
+| libreta             |
++---------------------+
+1 row in set (0.00 sec)
+mysql> desc libreta;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| nombre    | varchar(20) | NO   | PRI | NULL    |       |
+| domicilio | varchar(30) | NO   |     | NULL    |       |
+| telefono  | varchar(11) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+mysql>  insert into libreta (nombre, domicilio, telefono) values ("Alberto mores","Cra 98b 72-25","3058792622");
+Query OK, 1 row affected (0.04 sec)
+mysql> insert into libreta (nombre, domicilio, telefono) values ("Juan Torres", "Call 26 89-32","3142832596");
+Query OK, 1 row affected (0.04 sec)
+mysql> select * from libreta;
++---------------+---------------+------------+
+| nombre        | domicilio     | telefono   |
++---------------+---------------+------------+
+| Alberto mores | Cra 98b 72-25 | 3058792622 |
+| Juan Torres   | Call 26 89-32 | 3142832596 |
++---------------+---------------+------------+
+2 rows in set (0.00 sec)
+mysql> Select * from libreta;
++---------------+---------------+-------------+
+| nombre        | domicilio     | telefono    |
++---------------+---------------+-------------+
+| Alberto mores | Cra 98b 72-25 | 30055555555 |
+| Juan Torres   | Call 26 89-32 | 30055555555 |
++---------------+---------------+-------------+
+2 rows in set (0.00 sec)
+mysql> insert into libreta (nombre, domicilio, telefono) values ("Anderson Pino", "Trv 98 89-23","3002349283");
+Query OK, 1 row affected (0.04 sec)
+
+mysql>  insert into libreta (nombre, domicilio, telefono) values ("Cris Reyes", "Call 98 25-90","3170294766");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into libreta (nombre, domicilio, telefono) values ("Marisol Ibarra", "Av 90 23-89","3150265394");
+Query OK, 1 row affected (0.04 sec)
+
+mysql>  insert into libreta (nombre, domicilio, telefono) values ("Margoth Rengifo", "Cra 10 78-21","3058654320");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into libreta (nombre, domicilio, telefono) values ("Alirio Mendez", "Cll 26 98-12","3128910101");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from gente;
+ERROR 1146 (42S02): Table 'bdlibreta.gente' doesn't exist
+mysql> select * from libreta;
++-----------------+---------------+-------------+
+| nombre          | domicilio     | telefono    |
++-----------------+---------------+-------------+
+| Alberto mores   | Cra 98b 72-25 | 30055555555 |
+| Alirio Mendez   | Cll 26 98-12  | 3128910101  |
+| Anderson Pino   | Trv 98 89-23  | 3002349283  |
+| Cris Reyes      | Call 98 25-90 | 3170294766  |
+| Juan Torres     | Call 26 89-32 | 30055555555 |
+| Margoth Rengifo | Cra 10 78-21  | 3058654320  |
+| Marisol Ibarra  | Av 90 23-89   | 3150265394  |
++-----------------+---------------+-------------+
+7 rows in set (0.00 sec)
+mysql>  select count(*)
+    -> from libreta
+    -> ;
++----------+
+| count(*) |
++----------+
+|        7 |
++----------+
+1 row in set (0.00 sec)
+mysql> Select * from libreta;
++---------------+---------------+-------------+
+| nombre        | domicilio     | telefono    |
++---------------+---------------+-------------+
+| Alberto mores | Cra 98b 72-25 | 30055555555 |
+| Juan Torres   | Call 26 89-32 | 30055555555 |
++---------------+---------------+-------------+
+2 rows in set (0.00 sec)
